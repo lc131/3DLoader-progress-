@@ -106,11 +106,7 @@ int main()
 		// Specify the color of the background
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		// Clean the back buffer and assign the new color to it
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		
-		//Give value to uniform data right after activate function
-		
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		
 		// *****
 		//3D IMPLEMENTATION
 
@@ -142,15 +138,11 @@ int main()
 			prevTime = crntTime;
 		}
 		
-		//planksTex.Bind();
-		//planksSpec.Bind();
-		//Bind the VAO so OpenGL knows to use it
-		//VAO1.Bind();
 
-		/*double  timeValue = glfwGetTime();
+		double  timeValue = glfwGetTime();
 		float greenValue = static_cast<float>(sin(timeValue) / 2.0 + 0.5);
 		int vertexColorLocation = glGetUniformLocation(shaderProgram.ID, "ourColor");
-		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);*/
+		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
 		// Draw primitives, number of indices, datatype of indices, index of indices
 
@@ -158,18 +150,6 @@ int main()
 		/*glDrawArrays(GL_TRIANGLES, 0, 3);*/
 		////Draw 9 indices triangle
 		glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
-
-		//TEXTURE TEST
-		
-		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-		//3D IMPLEMENT
-
-		/*glDrawElements(GL_TRIANGLES, sizeof(indices)/sizeof(int), GL_UNSIGNED_INT, 0);
-
-		lightShader.Activate();
-		camera.Matrix(lightShader, "camMatrix");
-		lightVAO.Bind();*/
 		glDrawElements(GL_TRIANGLES, sizeof(lightIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
 
 		
