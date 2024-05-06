@@ -86,41 +86,6 @@ int main()
 	//SCALEUNIFORM
 	//GLuint uniID = glGetUniformLocation(shaderProgram.ID, "scale");
 
-	// TEXTURE
-
-	//int widthIMG, heightIMG, numColCh;
-	//stbi_set_flip_vertically_on_load(true);
-
-	//unsigned char* bytes = stbi_load("wood.png", &widthIMG, &heightIMG, &numColCh, 0);
-
-	//GLuint texture;
-	//glGenTextures(1, &texture);
-	//glActiveTexture(GL_TEXTURE0);
-	//glBindTexture(GL_TEXTURE_2D, texture);
-
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	//// Assigns the image to the OpenGL Texture object
-	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, widthIMG, heightIMG, 0, GL_RGBA, GL_UNSIGNED_BYTE, bytes);
-
-	//// Generates MipMaps
-	//glGenerateMipmap(GL_TEXTURE_2D);
-
-	//// Deletes the image data as it is already in the OpenGL Texture object
-	//stbi_image_free(bytes);
-
-	//// Unbinds the OpenGL Texture object so that it can't accidentally be modified
-	//glBindTexture(GL_TEXTURE_2D, 0);
-
-
-	//GLuint tex0Uni = glGetUniformLocation(shaderProgram.ID, "tex0");
-	//shaderProgram.Activate();
-	//glUniform1i(tex0Uni, 0);
-
 
 	// Variables rotation
 	//TIMER IF NO CAMERA
