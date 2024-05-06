@@ -5,81 +5,6 @@ const unsigned int width = 1000;
 const unsigned int height = 1000;
 
 
-// Vertices coordinates
-//GLfloat vertices[] =
-//{ //     COORDINATES     /        COLORS        /    TexCoord    /       NORMALS     //
-//	-1.0f, 0.1f,  1.0f,		0.0f, 0.0f, 0.0f,		0.0f, 0.0f,		0.0f, 1.0f, 0.0f,
-//	-1.0f, 0.7f, -1.0f,		0.0f, 0.0f, 0.0f,		0.0f, 1.0f,		0.0f, 1.0f, 0.0f,
-//	 1.0f, 0.4f, -1.0f,		0.0f, 0.0f, 0.0f,		1.0f, 1.0f,		0.0f, 1.0f, 0.0f,
-//	 1.0f, 0.2f,  1.0f,		0.0f, 0.0f, 0.0f,		1.0f, 0.0f,		0.0f, 1.0f, 0.0f
-//};
-
-
-//// Vertices coordinates
-//Vertex vertices[] =
-//{ //               COORDINATES           /            COLORS          /           NORMALS         /       TEXTURE COORDINATES    //
-//	Vertex{glm::vec3(-1.0f, 0.1f,  1.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec2(0.0f, 0.0f)},
-//	Vertex{glm::vec3(-1.0f, 0.2f, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec2(0.0f, 1.0f)},
-//	Vertex{glm::vec3(1.0f, 0.3f, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec2(1.0f, 1.0f)},
-//	Vertex{glm::vec3(1.0f, 0.4f,  1.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), glm::vec2(1.0f, 0.0f)}
-//};
-//
-//// Indices for vertices order
-//GLuint indices[] =
-//{
-//	0, 1, 2,
-//	0, 2, 3
-//};
-//// Vertices coordinates with light
-//GLfloat vertices[] =
-//{ //     COORDINATES     /        COLORS          /    TexCoord   /        NORMALS       //
-//	-0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-//	-0.5f, 0.0f, -0.5f,     0.13f, 0.70f, 0.44f,	 0.0f, 5.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-//	 0.5f, 0.0f, -0.5f,     0.14f, 0.70f, 0.44f,	 5.0f, 5.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-//	 0.5f, 0.0f,  0.5f,     0.16f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, -1.0f, 0.0f, // Bottom side
-//
-//	-0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,     -0.8f, 0.5f,  0.0f, // Left Side
-//	-0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,     -0.8f, 0.5f,  0.0f, // Left Side
-//	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,     -0.8f, 0.5f,  0.0f, // Left Side
-//
-//	-0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
-//	 0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
-//	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.0f, 0.5f, -0.8f, // Non-facing side
-//
-//	 0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,	 0.0f, 0.0f,      0.8f, 0.5f,  0.0f, // Right side
-//	 0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.8f, 0.5f,  0.0f, // Right side
-//	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.8f, 0.5f,  0.0f, // Right side
-//
-//	 0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,	 5.0f, 0.0f,      0.0f, 0.5f,  0.8f, // Facing side
-//	-0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f, 	 0.0f, 0.0f,      0.0f, 0.5f,  0.8f, // Facing side
-//	 0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,	 2.5f, 5.0f,      0.0f, 0.5f,  0.8f  // Facing side
-//};
-
-
-// Indices for vertices order
-//GLuint indices[] =
-//{
-//	0, 1, 2, // Bottom side
-//	0, 2, 3, // Bottom side
-//	4, 6, 5, // Left side
-//	7, 9, 8, // Non-facing side
-//	10, 12, 11, // Right side
-//	13, 15, 14 // Facing side
-//};
-//**Light Object**
-
-//GLfloat lightVertices[] =
-//{ //     COORDINATES     //
-//	-0.1f, -0.1f,  0.1f,
-//	-0.1f, -0.1f, -0.1f,
-//	 0.1f, -0.1f, -0.1f,
-//	 0.1f, -0.1f,  0.1f,
-//	-0.1f,  0.1f,  0.1f,
-//	-0.1f,  0.1f, -0.1f,
-//	 0.1f,  0.1f, -0.1f,
-//	 0.1f,  0.1f,  0.1f
-//};
-
 Vertex lightVertices[] =
 { //     COORDINATES     //
 	Vertex{glm::vec3(-0.5f, -0.5f,  0.5f)},
@@ -106,16 +31,6 @@ GLuint lightIndices[] =
 	4, 5, 6,
 	4, 6, 7
 };
-
-//// Triangle
-//	GLfloat vertices[] =
-//{
-//	//	//               COORDINATES                  /     COLORS           //
-//	-0.5f, -0.5f * float(sqrt(3)) * 1 / 3, 0.0f,     0.8f, 0.3f,  0.02f, // Lower left corner
-//	 0.5f, -0.5f * float(sqrt(3)) * 1 / 3, 0.0f,     -0.8f, 0.3f,  0.02f, // Lower right corner
-//	 0.0f,  0.5f * float(sqrt(3)) * 2 / 3, 0.0f,     0.1f, 0.6f,  0.32f, // Upper corner
-//};
-
 
 
 int main()
